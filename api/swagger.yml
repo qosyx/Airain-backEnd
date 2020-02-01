@@ -1,0 +1,316 @@
+swagger: "2.0"
+info:
+  description: This swagger described the operation of the APIs 
+  title: Swagger REST LeAirain
+  version: "1.0.0"
+  contact:
+    email: "jeanbaptiste.gandonou@imsp-uac.org"
+  license:
+    name: "Institut de Mathématique de Science Physique"
+    url: "contact@imsp-uac.org"
+  
+consumes:
+  - application/json
+produces:
+  - application/json
+basePath: /api
+
+# Paths supported by the server application
+paths:
+# produit
+  /produit:
+    post:
+      operationId: produit.createProd
+      tags:
+        - produit
+      summary: Save  produit
+      description: Save produit
+      parameters:
+        - name: produitJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of produit
+              libelle:
+                type: string
+                description: libelle of product
+              typeproduitid:
+                type: string
+                description: type produit id
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /produit/{productId}:
+    put:
+      operationId: produit.updateProd
+      tags:
+        - produit
+      summary: update  produit
+      description: update produit
+      parameters:
+        - name: productId
+          in: path
+          description: productId
+          type: string
+          required: True
+        - name: produitJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of produit
+              libelle:
+                type: string
+                description: libelle of product
+              typeproduitid:
+                type: string
+                description: type produit id
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+  /produit/delete/{productId}:
+    delete:
+      operationId: produit.deleteProd
+      tags:
+        - produit
+      summary: delete  produit
+      description: delete produit
+      parameters:
+        - name: productId
+          in: path
+          description: productId
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /produit/allproduit:
+    get:
+      operationId: produit.getAllProd
+      tags:
+        - produit
+      summary:  Get all produit
+      description:  Get produit
+      responses:
+        201:
+          description: Successfully veda db created
+          schema:
+            properties:
+              typeproduitid:
+                type: string
+                description: Job status
+              code:
+                type: string
+                description: Job status
+              libelle:
+                type: string
+                description: Job status
+              visible:
+                type: string
+                description: Job status
+  /produit/produitByCriteria:
+    post:
+      operationId: produit.getProdByCriteria
+      tags:
+        - produit
+      summary: Save  produit
+      description: Save produit
+      parameters:
+        - name: produitJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of produit
+              libelle:
+                type: string
+                description: libelle of product
+              typeproduitid:
+                type: string
+                description: type produit id
+              produitid:
+                  type: string
+                  description:  produit id
+              visible:
+                    type: string
+                    description: visible produit id
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+#type produit
+  /typeproduit:
+    post:
+      operationId: typeproduit.createtypeprod
+      tags:
+        - typeproduit
+      summary: Save  typeproduit
+      description: Save typeproduit
+      parameters:
+        - name: typeproduitJson
+          in: body
+          description: to typeproduit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of typeproduit
+              libelle:
+                type: string
+                description: libelle of typeproduct
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+  /typeproduit/{typeproductId}:
+    put:
+      operationId: typeproduit.updatetypeprod
+      tags:
+        - typeproduit
+      summary: update  produit
+      description: update produit
+      parameters:
+        - name: typeproductId
+          in: path
+          description: productId
+          type: string
+          required: True
+        - name: typeproduitJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of produit
+              libelle:
+                type: string
+                description: libelle of product
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /typeproduit/delete/{typeproductId}:
+    delete:
+      operationId: typeproduit.deletetypeprod
+      tags:
+        - typeproduit
+      summary: delete  typeproduit
+      description: delete typeproduit
+      parameters:
+        - name: typeproductId
+          in: path
+          description: typeproductId
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+              
+  /typeproduit/alltypeproduit:
+    get:
+      operationId: typeproduit.getAlltypeprod
+      tags:
+        - typeproduit
+      summary:  Get all typeproduit
+      description:  Get typeproduit
+      responses:
+        201:
+          description: Successfully typeproduit
+          schema:
+            properties:
+              typeproduitid:
+                type: string
+                description: Job status
+              code:
+                type: string
+                description: Job status
+              libelle:
+                type: string
+                description: Job status
+              visible:
+                type: string
+                description: Job status
+
+  /typeproduit/typeproduitByCriteria:
+    post:
+      operationId: typeproduit.gettypeprodByCriteria
+      tags:
+        - typeproduit
+      summary: Save  produit
+      description: Save produit
+      parameters:
+        - name: typeproduitJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of produit
+              libelle:
+                type: string
+                description: libelle of product
+              visible:
+                type: string
+                description: visible produit id
+              typeproduitid:
+                  type: string
+                  description: type produit id
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake

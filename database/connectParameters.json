@@ -1,0 +1,8 @@
+
+{
+    "dbuser":"postgres",
+    "dbpass":"postgres",
+    "dbserver":"127.0.0.1",
+    "dbname":"leairain",
+    "dbport":5432
+}
