@@ -11,11 +11,8 @@ path = path+"/connectParameters.json"
 
 
 def createProd(produitJson):
-    try:
-        result = p.createProduit(path,produitJson)
-        return result
-    except print(0):
-        pass
+    result = p.createProduit(path,produitJson)
+    return result
 
 
 def updateProd(produitJson,productId):

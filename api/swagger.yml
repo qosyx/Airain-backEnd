@@ -314,3 +314,406 @@ paths:
               operationcode:
                 type: string
                 description: 1 for Successfully other for mistake
+#Magasin
+  /magasin:
+    post:
+      operationId: magasin.createMagasin
+      tags:
+        - magasin
+      summary: Save  magasin
+      description: Save magasin
+      parameters:
+        - name: magasinJson
+          in: body
+          description: to magasin
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of magasin
+              libelle:
+                type: string
+                description: libelle of magasin
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /magasin/{magasinId}:
+    put:
+      operationId: magasin.updateMagasin
+      tags:
+        - magasin
+      summary: update  magasin
+      description: update magasin
+      parameters:
+        - name: magasinId
+          in: path
+          description: magasinId
+          type: string
+          required: True
+        - name: magasinJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of magasin
+              libelle:
+                type: string
+                description: name of magasin
+      responses:
+        200:
+          description: Successfully to update magasin
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+#Personnel
+
+  /personnel:
+    post:
+      operationId: personnel.createPersonnel
+      tags:
+        - personnel
+      summary: Save  personnel
+      description: Save personnel
+      parameters:
+        - name: personnelJson
+          in: body
+          description: to personnel
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of personne
+              nom:
+                type: string
+                description: nom of personne
+              prenom:
+                type: string
+                description: prenom of personne
+              statut:
+                type: string
+                description: statut of personne
+              typepersonnelid:
+                type: string
+                description: typepersonnelid of personne
+              login:
+                type: string
+                description: login of personne
+              password:
+                type: string
+                description: password of personne
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /personnel/{personnelId}:
+    put:
+      operationId: personnel.updatePersonnel
+      tags:
+        - personnel
+      summary: update  personnel
+      description: update personnel
+      parameters:
+        - name: personnelId
+          in: path
+          description: personnelId
+          type: string
+          required: True
+        - name: personnelJson
+          in: body
+          description: to personnel
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of personne
+              nom:
+                type: string
+                description: nom of personne
+              prenom:
+                type: string
+                description: prenom of personne
+              statut:
+                type: string
+                description: statut of personne
+              typepersonnelid:
+                type: string
+                description: typepersonnelid of personne
+              login:
+                type: string
+                description: login of personne
+              password:
+                type: string
+                description: password of personne
+      responses:
+        200:
+          description: Successfully to update personne
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+  /personnel/delete/{personnelId}:
+    delete:
+      operationId: personnel.deletePersonnel
+      tags:
+        - personnel
+      summary: delete  personnel
+      description: delete personnel
+      parameters:
+        - name: personnelId
+          in: path
+          description: personnelId
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully to delete personne
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /personnelId/getAllPersonnel:
+    get:
+      operationId: personnel.getAllPersonnel
+      tags:
+        - personnel
+      summary:  Get all personnel
+      description:  Get personnel
+      responses:
+        201:
+          description: Successfully
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of personne
+              nom:
+                type: string
+                description: nom of personne
+              prenom:
+                type: string
+                description: prenom of personne
+              statut:
+                type: string
+                description: statut of personne
+              typepersonnelid:
+                type: string
+                description: typepersonnelid of personne
+              login:
+                type: string
+                description: login of personne
+              password:
+                type: string
+                description: password of personne
+  /personnel/getPersonnelByCriteria:
+    post:
+      operationId: personnel.getPersonnelByCriteria
+      tags:
+        - personnel
+      summary: get  personnel
+      description: get personnel
+      parameters:
+        - name: personnelJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of personne
+              nom:
+                type: string
+                description: nom of personne
+              prenom:
+                type: string
+                description: prenom of personne
+              statut:
+                type: string
+                description: statut of personne
+              typepersonnelid:
+                type: string
+                description: typepersonnelid of personne
+              login:
+                type: string
+                description: login of personne
+              password:
+                type: string
+                description: password of personne
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+#type personnel
+
+  /typepersonnel:
+    post:
+      operationId: typepersonnel.createtypepersonnel
+      tags:
+        - typepersonnel
+      summary: Save  typepersonnel
+      description: Save typepersonnel
+      parameters:
+        - name: typepersonnelJson
+          in: body
+          description: to typeproduit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of typeproduit
+              libelle:
+                type: string
+                description: libelle of typeproduct
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /typepersonnel/{typepersonnelId}:
+    put:
+      operationId: typepersonnel.updatetypepersonnel
+      tags:
+        - typepersonnel
+      summary: update  produit
+      description: update produit
+      parameters:
+        - name: typepersonnelId
+          in: path
+          description: typepersonnelId
+          type: string
+          required: True
+        - name: typepersonnelJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of produit
+              libelle:
+                type: string
+                description: libelle of product
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /typepersonnel/delete/{typepersonnelId}:
+    delete:
+      operationId: typepersonnel.deletetypepersonnel
+      tags:
+        - typepersonnel
+      summary: delete  typeproduit
+      description: delete typeproduit
+      parameters:
+        - name: typepersonnelId
+          in: path
+          description: typepersonnelId
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+            
+  /typepersonnel/getAlltypepersonnel:
+    get:
+      operationId: typepersonnel.getAlltypepersonnel
+      tags:
+        - typepersonnel
+      summary:  Get all typeproduit
+      description:  Get typeproduit
+      responses:
+        201:
+          description: Successfully typeproduit
+          schema:
+            properties:
+              typepersonnelid:
+                type: string
+                description: Job status
+              code:
+                type: string
+                description: Job status
+              libelle:
+                type: string
+                description: Job status
+              visible:
+                type: string
+                description: Job status
+
+  /typepersonnel/gettypepersonnelByCriteria:
+    post:
+      operationId: typepersonnel.gettypepersonnelByCriteria
+      tags:
+        - typepersonnel
+      summary: Save  produit
+      description: Save produit
+      parameters:
+        - name: typepersonnelJson
+          in: body
+          description: to produit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of produit
+              libelle:
+                type: string
+                description: libelle of product
+              visible:
+                type: string
+                description: visible produit id
+              typepersonnelid:
+                  type: string
+                  description: type produit id
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
