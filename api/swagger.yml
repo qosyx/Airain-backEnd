@@ -717,3 +717,202 @@ paths:
               operationcode:
                 type: string
                 description: 1 for Successfully other for mistake
+
+#acquisition
+
+  /acquisition:
+    post:
+      operationId: acquisition.createAcquisition
+      tags:
+        - acquisition
+      summary: Save  typepersonnel
+      description: Save typepersonnel
+      parameters:
+        - name: acquisitionJson
+          in: body
+          description: to typeproduit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of typeproduit
+              libelle:
+                type: string
+                description: libelle of typeproduct
+              quantite:
+                type: string
+                description: code of typeproduit
+              dateacquisition:
+                type: string
+                description: date acquisition 
+              magasinid:
+                type: string
+                description: magasinid 
+              personnelid:
+                type: string
+                description: personnelid
+              produitid:
+                type: string
+                description: produit id 
+      responses:
+        200:
+          description: Successfully 
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /acquisition/{acquisitionId}:
+    put:
+      operationId: acquisition.updateAcquisition
+      tags:
+        - acquisition
+      summary: update  produit
+      description: update produit
+      parameters:
+        - name: acquisitionId
+          in: path
+          description: acquisitionId
+          type: string
+          required: True
+        - name: acquisitionJson
+          in: body
+          description: acquisition Json
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of typeproduit
+              libelle:
+                type: string
+                description: libelle of typeproduct
+              quantite:
+                type: string
+                description: code of typeproduit
+              dateacquisition:
+                type: string
+                description: date acquisition 
+              magasinid:
+                type: string
+                description: magasinid 
+              personnelid:
+                type: string
+                description: personnelid
+              produitid:
+                type: string
+                description: produit id 
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+
+  /acquisition/delete/{acquisitionId}:
+    delete:
+      operationId: acquisition.deleteAcquisition
+      tags:
+        - acquisition
+      summary: delete  typeproduit
+      description: delete typeproduit
+      parameters:
+        - name: acquisitionId
+          in: path
+          description: acquisitionId
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake
+          
+  /acquisition/getAllacquisition:
+    get:
+      operationId: acquisition.getAllAcquisition
+      tags:
+        - acquisition
+      summary:  Get all typeproduit
+      description:  Get typeproduit
+      responses:
+        201:
+          description: Successfully typeproduit
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of typeproduit
+              libelle:
+                type: string
+                description: libelle of typeproduct
+              quantite:
+                type: string
+                description: code of typeproduit
+              dateacquisition:
+                type: string
+                description: date acquisition 
+              magasinid:
+                type: string
+                description: magasinid 
+              personnelid:
+                type: string
+                description: personnelid
+              produitid:
+                type: string
+                description: produit id 
+
+  /acquisition/getacquisitionByCriteria:
+    post:
+      operationId: acquisition.getAcquisitionByCriteria
+      tags:
+        - acquisition
+      summary: Save  produit
+      description: Save produit
+      parameters:
+        - name: acquisitionJson
+          in: body
+          description: acquisitionJson
+          schema:
+            type: object
+            properties:
+              code:
+                type: string
+                description: code of typeproduit
+              libelle:
+                type: string
+                description: libelle of typeproduct
+              quantite:
+                type: string
+                description: code of typeproduit
+              dateacquisition:
+                type: string
+                description: date acquisition 
+              magasinid:
+                type: string
+                description: magasinid 
+              personnelid:
+                type: string
+                description: personnelid
+              produitid:
+                type: string
+                description: produit id 
+              visible:
+                type: string
+                description: visible of acquisition
+      responses:
+        200:
+          description: Successfully to save produit
+          schema:
+            properties:
+              operationcode:
+                type: string
+                description: 1 for Successfully other for mistake

@@ -26,8 +26,5 @@ def getAllProd():
     result = p.getAllProduit(path)
     return result
 def getProdByCriteria(produitJson):
-    try:
-        result = p.getProduitByCriteria(path,produitJson)
-        return result
-    except print(0):
-        pass
+    result = p.getProduitByCriteria(path,produitJson)
+    return result

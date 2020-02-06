@@ -7,7 +7,8 @@ from flask_cors import CORS
 import os
 
 app = connexion.App(__name__, specification_dir="./")
-cors = CORS(app.app, resources={r"/api/*": {"origins": "*"}})
+cors = CORS(app.app)
+# cors = CORS(app.app, resources={r"/api/*": {"origins": "*"}})
 
 app.add_api("swagger.yml")
 

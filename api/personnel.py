@@ -26,8 +26,5 @@ def getAllPersonnel():
     result = p.getAllPersonnel(path)
     return result
 def getPersonnelByCriteria(personnelJson):
-    try:
-        result = p.getPersonnelByCriteria(path,personnelJson)
-        return result
-    except print(0):
-        pass
+    result = p.getPersonnelByCriteria(path,personnelJson)
+    return result
